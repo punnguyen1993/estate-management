@@ -15,6 +15,9 @@ public class UserEntity extends BaseEntity {
     @Column(name = "username", nullable = false, unique = true)
     private String userName;
 
+    @Column(name = "phone")
+    private String phone;
+
     @Column(name = "fullname", nullable = false)
     private String fullName;
 
@@ -40,6 +43,14 @@ public class UserEntity extends BaseEntity {
 
     @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Set<CustomerEntity> customers = new HashSet<>();
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public Set<BuildingEntity> getBuildings() {
         return buildings;

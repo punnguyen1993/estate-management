@@ -40,7 +40,6 @@
                             <div class="space-4"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">
-                                        <%--<spring:message code="label.password.old"/>--%>
                                     Mật khẩu cũ
                                 </label>
                                 <div class="col-sm-9">
@@ -50,7 +49,6 @@
                             <div class="space-4"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">
-                                        <%--<spring:message code="label.password.new"/>--%>
                                     Mật khẩu mới
                                 </label>
                                 <div class="col-sm-9">
@@ -60,7 +58,6 @@
                             <div class="space-4"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">
-                                        <%--<spring:message code="label.password.repeat"/>--%>
                                     Nhập lại mật khẩu mới
                                 </label>
                                 <div class="col-sm-9">
@@ -74,7 +71,7 @@
                                 <button type="button" class="btn btn-primary" id="btnChangePassword">
                                     Đổi mật khẩu
                                 </button>
-                                    <%--<input type="button" class="btn btn-white btn-warning btn-bold" value="Đổi mật khẩu" id="btnChangePassword"/>--%>
+
                             </div>
                             <!--Btn-->
                             <input type="hidden" value="${model.id}" id="userId"/>
@@ -123,8 +120,6 @@
                     });
                     changePassword(dataArray, $('#userId').val());
                 }
-                // });
-                // });
             });
 
             function changePassword(data, id) {

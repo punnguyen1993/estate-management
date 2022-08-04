@@ -3,8 +3,6 @@ package com.laptrinhjavaweb.entity;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "assignmentbuilding")
 public class BuildingAssignmentEntity extends BaseEntity {
 
 //    @ManyToOne(fetch = FetchType.LAZY)

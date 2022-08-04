@@ -36,34 +36,32 @@
                     </c:if>
                     <div id="profile">
                         <form:form id="formEdit" class="form-horizontal" modelAttribute="model">
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">
-                                <%--<spring:message code="label.username"/>--%>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right">
                                     Tên đăng nhập
-                            </label>
-                            <div class="col-sm-9">
-                                <form:input path="userName" id="userName" cssClass="form-control" disabled="true"/>
+                                </label>
+                                <div class="col-sm-9">
+                                    <form:input path="userName" id="userName" cssClass="form-control" disabled="true"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">
-                                <%--<spring:message code="label.fullname"/>--%>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right">
                                     Tên đầy đủ
-                            </label>
-                            <div class="col-sm-9">
-                                <form:input path="fullName" id="fullName" cssClass="form-control"/>
+                                </label>
+                                <div class="col-sm-9">
+                                    <form:input path="fullName" id="fullName" cssClass="form-control"/>
+                                </div>
                             </div>
-                        </div>
-                        <!--Btn-->
-                        <div class="col-sm-12">
+                            <!--Btn-->
+                            <div class="col-sm-12">
                                 <label class="col-sm-3 control-label no-padding-right message-info"></label>
                                 <input type="button" class="btn btn-white btn-warning btn-bold"
                                        value="Cập nhật người dùng" id="btnUpdateUser"/>
-                        </div>
-                        <!--Btn-->
-                        <form:hidden path="id" id="userId"/>
+                            </div>
+                            <!--Btn-->
+                            <form:hidden path="id" id="userId"/>
                         </form:form>
                     </div>
                 </div>
@@ -96,6 +94,7 @@
                 }
             });
         }
+
     </script>
 </div>
 </body>

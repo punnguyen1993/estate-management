@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/user")
 public class UserAPI {
 
-//    private Logger LOGGER = Logger.getLogger(UserAPI.class);
-
     @Autowired
     private IUserService userService;
 
@@ -34,7 +32,6 @@ public class UserAPI {
             userService.updatePassword(id, passwordDTO);
             return ResponseEntity.ok(SystemConstant.UPDATE_SUCCESS);
         } catch (MyException e) {
-//            LOGGER.error(e.getMessage());
             return ResponseEntity.ok(e.getMessage());
         }
     }
@@ -49,9 +46,10 @@ public class UserAPI {
         return ResponseEntity.ok(userService.updateProfileOfUser(username, userDTO));
     }
 
-    @DeleteMapping
+
 //    @ResponseStatus(HttpStatus.NO_CONTENT)
 //    status code: 204
+    @DeleteMapping
     public ResponseEntity<Void> deleteUsers(@RequestBody long[] idList) {
         if (idList.length > 0) {
             userService.delete(idList);
