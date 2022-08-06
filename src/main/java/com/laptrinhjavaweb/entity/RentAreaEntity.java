@@ -5,6 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "rentarea")
 public class RentAreaEntity extends BaseEntity{
+
+    private static final long serialVersionUID = 6803290711341093241L;
+
+
     @Column(name = "value")
     private Integer value;
 

@@ -8,6 +8,9 @@ import java.util.Set;
 @Table(name = "transactiontype")
 public class TransactionTypeEntity extends BaseEntity{
 
+    private static final long serialVersionUID = -6429205096605254294L;
+
+
     @Column(name = "name")
     private String name;
     @Column(name = "code")

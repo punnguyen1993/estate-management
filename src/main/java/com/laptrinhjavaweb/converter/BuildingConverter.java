@@ -3,6 +3,7 @@ package com.laptrinhjavaweb.converter;
 import com.laptrinhjavaweb.builder.BuildingSearchBuilder;
 import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.dto.BuildingDTO;
+import com.laptrinhjavaweb.dto.request.BuildingSearchRequest;
 import com.laptrinhjavaweb.dto.response.BuildingSearchRespone;
 import com.laptrinhjavaweb.entity.BuildingEntity;
 import com.laptrinhjavaweb.entity.RentAreaEntity;
@@ -21,7 +22,7 @@ public class BuildingConverter {
     @Autowired
     private ModelMapper modelMapper;
 
-    public BuildingSearchBuilder convertDTOToBuilder(BuildingDTO buildingDTO) {
+    public BuildingSearchBuilder convertDTOToBuilder(BuildingSearchRequest buildingDTO) {
         BuildingSearchBuilder builder = new BuildingSearchBuilder.Builder()
                             .setName(buildingDTO.getName())
                             .setRentAreaFrom(buildingDTO.getRentAreaFrom())

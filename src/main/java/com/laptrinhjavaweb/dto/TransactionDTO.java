@@ -1,6 +1,9 @@
 package com.laptrinhjavaweb.dto;
 
 public class TransactionDTO extends AbstractDTO {
+
+    private static final long serialVersionUID = 4250632176065182303L;
+
     private String note;
     private String name;
     private String transactionType;

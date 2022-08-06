@@ -1,6 +1,10 @@
 package com.laptrinhjavaweb.builder;
 
-public class BuildingSearchBuilder {
+import java.io.Serializable;
+
+public class BuildingSearchBuilder implements Serializable {
+
+    private static final long serialVersionUID = -2824718183437317125L;
 
     private String name;
     private String managerName;

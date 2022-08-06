@@ -31,6 +31,7 @@ public class BuildingRepositoryImpl implements BuildingRepositoryCustom {
                             .append(buildFromOfSearchingQuery(builder));
         Query query = entityManager.createNativeQuery(sql.toString(), BuildingEntity.class);
         query.setFirstResult(firstResult);
+
         query.setMaxResults(maxResult);
         return query.getResultList();
     }

@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.controller.admin;
 
 import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.dto.BuildingDTO;
+import com.laptrinhjavaweb.dto.request.BuildingSearchRequest;
 import com.laptrinhjavaweb.dto.response.BuildingSearchRespone;
 import com.laptrinhjavaweb.service.IBuildingService;
 import com.laptrinhjavaweb.service.IUserService;
@@ -28,25 +29,25 @@ public class BuildingController {
 	private IUserService userService;
 
 	@RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
-	public ModelAndView buildingList(@ModelAttribute(SystemConstant.MODEL_SEARCH) BuildingDTO buildingDTO,
-									 @ModelAttribute(SystemConstant.TABLE_MODEL) BuildingSearchRespone buildingSearchRespone,
+	public ModelAndView buildingList(@ModelAttribute(SystemConstant.MODEL_SEARCH) BuildingSearchRequest buildingSearchRequest,
+									 @ModelAttribute(SystemConstant.TABLE_MODEL) BuildingSearchRespone buildingSearchResponse,
 									 HttpServletRequest request) {
-		DisplayTagUtils.of(request, buildingSearchRespone);
+		DisplayTagUtils.of(request, buildingSearchResponse);
 		ModelAndView mav = new ModelAndView("admin/building/list");
 
 		List<BuildingSearchRespone> buildings;
- 		if(buildingDTO.isSearch()){
-			buildings = buildingService.findByDetail(buildingDTO, PageRequest.of(buildingDTO.getPage() - 1, buildingDTO.getMaxPageItems()));
-			buildingSearchRespone.setTotalItems(buildingService.countAllSearchBuilding(buildingDTO));
+ 		if(buildingSearchRequest.isSearch()){
+			buildings = buildingService.findByDetail(buildingSearchRequest, PageRequest.of(buildingSearchRequest.getPage() - 1, buildingSearchRequest.getMaxPageItems()));
+			buildingSearchResponse.setTotalItems(buildingService.countAllSearchBuilding(buildingSearchRequest));
 		}else{
-			buildings = buildingService.findAll(PageRequest.of(buildingSearchRespone.getPage() - 1, buildingSearchRespone.getMaxPageItems()));
-			buildingSearchRespone.setTotalItems(buildingService.countAll());
+			buildings = buildingService.findAll(PageRequest.of(buildingSearchResponse.getPage() - 1, buildingSearchResponse.getMaxPageItems()));
+			buildingSearchResponse.setTotalItems(buildingService.countAll());
 		}
 
-		buildingSearchRespone.setListResult(buildings);
+		buildingSearchResponse.setListResult(buildings);
 
-		mav.addObject(SystemConstant.MODEL_SEARCH, buildingDTO);
-		mav.addObject(SystemConstant.TABLE_MODEL, buildingSearchRespone);
+		mav.addObject(SystemConstant.MODEL_SEARCH, buildingSearchRequest);
+		mav.addObject(SystemConstant.TABLE_MODEL, buildingSearchResponse);
 		mav.addObject(SystemConstant.TYPES, buildingService.getTypes());
 		mav.addObject(SystemConstant.DISTRICTS, buildingService.getDistricts());
 		mav.addObject("staffmaps", userService.getStaffMaps());

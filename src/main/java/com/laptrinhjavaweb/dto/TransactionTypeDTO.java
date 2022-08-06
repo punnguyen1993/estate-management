@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TransactionTypeDTO extends AbstractDTO {
+
+    private static final long serialVersionUID = -1343170790975070602L;
+
     private String name;
     private String code;
     private List<TransactionDTO> transactionDTO = new ArrayList<>();

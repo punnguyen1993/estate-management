@@ -10,28 +10,19 @@ import java.util.Set;
 @Table(name="building")
 public class BuildingEntity extends BaseEntity {
 
+    private static final long serialVersionUID = -746248750770579742L;
+
     @OneToMany(mappedBy = "building",
                 cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE},
                 fetch = FetchType.LAZY)
     private List<RentAreaEntity> rentAreaEntities = new ArrayList<>();
 
-    @ManyToMany(/*cascade = {CascadeType.MERGE, CascadeType.PERSIST},*/
-                fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "assignmentbuilding",
             joinColumns = @JoinColumn(name = "buildingid", nullable = false),
             inverseJoinColumns = @JoinColumn(name = "staffid", nullable = false))
     private Set<UserEntity> users = new HashSet<>();
 
-
-    /*public void addUser(UserEntity user) {
-        users.add(user);
-        user.getBuildings().add(this);
-    }
-
-    public void removeUser(UserEntity user) {
-        users.remove(user);
-        user.getBuildings().remove(this);
-    }*/
     @Transient
     private Integer totalItem;
 

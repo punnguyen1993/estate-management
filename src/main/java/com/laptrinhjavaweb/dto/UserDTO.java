@@ -7,6 +7,9 @@ import java.util.Map;
 
 public class UserDTO extends AbstractDTO {
 
+    private static final long serialVersionUID = 522119236469069580L;
+
+
     private String email;
     private String userName;
     private String fullName;

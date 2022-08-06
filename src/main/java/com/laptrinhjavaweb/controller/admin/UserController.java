@@ -26,12 +26,11 @@ public class UserController {
 
 	@Autowired
 	private IUserService userService;
-
 	@Autowired
 	private RoleService roleService;
-
 	@Autowired
 	private MessageUtils messageUtil;
+
 
 	@RequestMapping(value = "/admin/user-list", method = RequestMethod.GET)
 	public ModelAndView getUsers(@ModelAttribute(SystemConstant.MODEL) UserDTO model, HttpServletRequest request) {

@@ -9,6 +9,7 @@ import com.laptrinhjavaweb.dto.response.BuildingSearchRespone;
 import com.laptrinhjavaweb.dto.response.ResponseDTO;
 import com.laptrinhjavaweb.service.IBuildingService;
 import com.laptrinhjavaweb.service.IUserService;
+import com.laptrinhjavaweb.service.impl.BuildingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

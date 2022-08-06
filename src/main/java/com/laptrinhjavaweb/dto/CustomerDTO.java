@@ -2,6 +2,9 @@ package com.laptrinhjavaweb.dto;
 
 
 public class CustomerDTO extends AbstractDTO {
+
+    private static final long serialVersionUID = -5598198080371140421L;
+
     private String fullName;
     private String phone;
     private String email;

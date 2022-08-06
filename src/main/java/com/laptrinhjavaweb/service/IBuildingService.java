@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.service;
 
 import com.laptrinhjavaweb.dto.BuildingDTO;
 import com.laptrinhjavaweb.dto.request.AssignStaffsOfBuildingRequest;
+import com.laptrinhjavaweb.dto.request.BuildingSearchRequest;
 import com.laptrinhjavaweb.dto.request.DeleteRequest;
 import com.laptrinhjavaweb.dto.response.BuildingSearchRespone;
 import com.laptrinhjavaweb.entity.BuildingEntity;
@@ -16,7 +17,7 @@ public interface IBuildingService {
     int countAll();
 
     BuildingDTO save(BuildingDTO buildingDTO);
-    List<BuildingSearchRespone> findByDetail(BuildingDTO buildingDTO, Pageable pageable);
+    List<BuildingSearchRespone> findByDetail(BuildingSearchRequest buildingDTO, Pageable pageable);
     void deleteBuildingAndReferences(DeleteRequest request);
 
     BuildingDTO findById(Long buidingId)/* throws BuildingNotFoundException*/;
@@ -28,5 +29,5 @@ public interface IBuildingService {
 
     List<BuildingEntity> findAllBuildings();
 
-    int countAllSearchBuilding(BuildingDTO buildingDTO);
+    int countAllSearchBuilding(BuildingSearchRequest buildingDTO);
 }

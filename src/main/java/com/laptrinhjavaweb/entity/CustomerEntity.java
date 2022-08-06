@@ -7,6 +7,10 @@ import java.util.Set;
 @Entity
 @Table(name = "customer")
 public class CustomerEntity extends BaseEntity{
+
+    private static final long serialVersionUID = -4909228702308348860L;
+
+
     @Column(name = "fullname")
     private String fullName;
     @Column(name = "phone")

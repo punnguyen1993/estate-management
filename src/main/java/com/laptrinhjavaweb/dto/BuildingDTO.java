@@ -1,6 +1,9 @@
 package com.laptrinhjavaweb.dto;
 
 public class BuildingDTO extends AbstractDTO{
+
+    private static final long serialVersionUID = 567605090417725937L;
+
     private boolean search;
 
     private String structure;

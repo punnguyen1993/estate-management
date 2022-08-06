@@ -5,6 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "transaction")
 public class TransactionEntity extends BaseEntity{
+
+    private static final long serialVersionUID = 9211022828115142019L;
+
+
     private String note;
     private String code;
 

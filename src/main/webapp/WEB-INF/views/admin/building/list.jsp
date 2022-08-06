@@ -222,7 +222,6 @@
             <div class="row">
                 <div class="col-xs-12">
 
-
                     <div class="table-responsive">
                         <display:table name="tableModel.listResult" cellspacing="0" cellpadding="0"
                                        requestURI="${buildingListURL}" partialList="true" sort="external"

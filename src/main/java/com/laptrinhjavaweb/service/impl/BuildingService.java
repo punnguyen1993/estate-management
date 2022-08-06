@@ -4,6 +4,7 @@ import com.laptrinhjavaweb.builder.BuildingSearchBuilder;
 import com.laptrinhjavaweb.converter.BuildingConverter;
 import com.laptrinhjavaweb.dto.BuildingDTO;
 import com.laptrinhjavaweb.dto.request.AssignStaffsOfBuildingRequest;
+import com.laptrinhjavaweb.dto.request.BuildingSearchRequest;
 import com.laptrinhjavaweb.dto.request.DeleteRequest;
 import com.laptrinhjavaweb.dto.response.BuildingSearchRespone;
 import com.laptrinhjavaweb.entity.BuildingEntity;
@@ -78,7 +79,7 @@ public class BuildingService implements IBuildingService {
         int totalItems;
         if (userHasRoleStaff()) {
             Long staffId = SecurityUtils.getPrincipal().getId();
-            totalItems = (int) buildingRepository.countByUsers_Id(staffId);
+            totalItems = buildingRepository.countByUsers_Id(staffId);
         }else{
             totalItems = (int) buildingRepository.count();
         }
@@ -108,7 +109,7 @@ public class BuildingService implements IBuildingService {
     }
 
     @Override
-    public List<BuildingSearchRespone> findByDetail(BuildingDTO buildingDTO, Pageable pageable) {
+    public List<BuildingSearchRespone> findByDetail(BuildingSearchRequest buildingDTO, Pageable pageable) {
         if (userHasRoleStaff()) {
             buildingDTO.setStaffId(SecurityUtils.getPrincipal().getId());
         }
@@ -182,7 +183,7 @@ public class BuildingService implements IBuildingService {
     }
 
     @Override
-    public int countAllSearchBuilding(BuildingDTO buildingDTO) {
+    public int countAllSearchBuilding(BuildingSearchRequest buildingDTO) {
         return buildingRepository.countTotalDetailItems(buildingConverter.convertDTOToBuilder(buildingDTO));
     }
 }

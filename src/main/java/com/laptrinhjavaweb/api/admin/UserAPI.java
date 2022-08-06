@@ -16,6 +16,7 @@ public class UserAPI {
     @Autowired
     private IUserService userService;
 
+
     @PostMapping
     public ResponseEntity<UserDTO> createUsers(@RequestBody UserDTO newUser) {
         return ResponseEntity.ok(userService.insert(newUser));
@@ -46,7 +47,6 @@ public class UserAPI {
         return ResponseEntity.ok(userService.updateProfileOfUser(username, userDTO));
     }
 
-
 //    @ResponseStatus(HttpStatus.NO_CONTENT)
 //    status code: 204
     @DeleteMapping
@@ -55,6 +55,5 @@ public class UserAPI {
             userService.delete(idList);
         }
         return ResponseEntity.noContent().build();
-
     }
 }
