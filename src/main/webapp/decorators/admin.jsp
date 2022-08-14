@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
 	<!-- jquery -->
 	<script type='text/javascript' src="js/2.1.4/jquery.min.js"></script>
-
 	<%--sweetalert--%>
 	<script type='text/javascript' src="assets/sweetalert2/sweetalert2.min.js"></script>
 	<link rel="stylesheet" href="assets/sweetalert2/sweetalert2.min.css">

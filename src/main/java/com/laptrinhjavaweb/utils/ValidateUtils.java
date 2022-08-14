@@ -19,7 +19,6 @@ public class ValidateUtils {
                 return !((Collection<?>) obj).isEmpty();
             }
         }
-
         return false;
     }
 

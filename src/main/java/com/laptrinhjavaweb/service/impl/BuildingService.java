@@ -162,7 +162,7 @@ public class BuildingService implements IBuildingService {
     public Map<String, String> getDistricts() {
         Map<String, String> districts = new HashMap<>();
         for (DistrictsEnum item : DistrictsEnum.values()) {
-            districts.put(item.toString(), item.getDistrictValue());
+            districts.put(item.getName(), item.getDistrictValue());
         }
         return districts;
     }

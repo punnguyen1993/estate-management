@@ -57,7 +57,7 @@ public class UserService implements IUserService {
     public ResponseDTO getAllStaffAndChecked(Long objectId, String objectName){
         List<UserEntity> allStaff = userRepository.findByStatusAndRoles_Code(1, SystemConstant.STAFF);
 
-        if(ValidateUtils.isValid(objectId)){
+        if(ValidateUtils.isValid(objectId) ){
             List<UserEntity> assignedStaffs;
             if(objectName.equals(SystemConstant.BUILDING)){
                 assignedStaffs = userRepository.findByBuildings(buildingRepository.getOne(objectId));
